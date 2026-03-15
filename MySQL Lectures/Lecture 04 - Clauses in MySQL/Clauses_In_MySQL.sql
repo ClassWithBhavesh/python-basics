@@ -72,3 +72,42 @@ SELECT * FROM employees;
 
 SELECT emp_role, COUNT(*) as Number_Of_Employees_In_Same_Role FROM employees
 GROUP BY emp_role;
+
+
+-- Having 
+USE allinonedb;
+SELECT * FROM employees;
+
+-- SELECT emp_dept, COUNT(*) FROM employees
+-- GROUP BY emp_dept;
+
+SELECT emp_dept, COUNT(*) AS number_of_employees FROM employees
+GROUP BY emp_dept
+HAVING COUNT(*) > 3;
+
+
+SELECT emp_city, COUNT(*) FROM employees
+GROUP BY emp_city
+HAVING AVG(emp_salary) > 40000;
+
+
+SELECT emp_dept, SUM(emp_salary) FROM employees
+GROUP BY emp_dept;
+
+
+SELECT SUM(emp_salary) total_salary_expense FROM employees;
+
+
+SELECT emp_role, COUNT(*) FROM employees
+GROUP BY emp_role
+HAVING SUM(emp_bonus) > 10000;
+
+
+SELECT emp_dept, MAX(emp_salary) highest_salary FROM employees
+GROUP BY emp_dept
+ORDER BY MAX(emp_salary) DESC
+LIMIT 1;
+
+
+
+
