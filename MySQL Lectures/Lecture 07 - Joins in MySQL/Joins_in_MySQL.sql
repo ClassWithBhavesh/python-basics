@@ -49,7 +49,32 @@ SELECT * FROM teacher;
 
 
 
--- OTUER JOIN - LEFT JOIN
+-- OTUER JOIN -
+-- 1. LEFT JOIN
 SELECT * FROM department
 LEFT JOIN teacher
 ON department.id = teacher.dept_id;
+
+SELECT * FROM department;
+SELECT * FROM teacher;
+
+
+-- 1. RIGHT JOIN
+SELECT * FROM department
+RIGHT JOIN teacher
+ON department.id = teacher.dept_id;
+
+SELECT * FROM department;
+SELECT * FROM teacher;
+
+
+-- full-outer join
+SELECT * FROM department d
+LEFT JOIN teacher t
+on d.id = t.dept_id
+UNION
+SELECT * FROM department d
+RIGHT JOIN teacher t
+ON d.id = t.dept_id;
+
+-- cross join & self join
